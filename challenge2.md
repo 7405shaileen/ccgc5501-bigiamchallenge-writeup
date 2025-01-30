@@ -35,7 +35,7 @@ The IAM policy is too permissive. Attackers could read sensitive messages or inj
 ```
 
 ## Solution
-Ran the following command to see if you can access the SQS queue: aws sqs get-queue-attributes --queue-url https://<queue-url> --attribute-name All
+Ran the following command to see if I could access the SQS queue: aws sqs get-queue-attributes --queue-url https://"queue-url" --attribute-name All
 The flag: {wiz:you-are-at-the-front-of-the-queue}
 
 ## Reflection
