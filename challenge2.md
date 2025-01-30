@@ -1,9 +1,9 @@
 # Challenge number
-1
+2
 
 ## Challenge Statement
-Buckets of Fun
-We all know that public buckets are risky. But can you find the flag?
+Google Analytics
+We created our own analytics system specifically for this challenge. We think it's so good that we even used it on this page. What could go wrong?
 
 ## IAM Policy 
 ```
@@ -13,19 +13,11 @@ We all know that public buckets are risky. But can you find the flag?
         {
             "Effect": "Allow",
             "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::thebigiamchallenge-storage-9979f4b/*"
-        },
-        {
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::thebigiamchallenge-storage-9979f4b",
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": "files/*"
-                }
-            }
+            "Action": [
+                "sqs:SendMessage",
+                "sqs:ReceiveMessage"
+            ],
+            "Resource": "arn:aws:sqs:us-east-1:092297851374:wiz-tbic-analytics-sqs-queue-ca7a1b2"
         }
     ]
 }
