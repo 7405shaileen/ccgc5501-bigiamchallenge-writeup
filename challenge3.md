@@ -55,7 +55,7 @@ Determining how to catch the request.
 * How did you overcome the challenges?
 Explored "Request Catcher" which is a tool for catching requests.
 * What led to the break through?
-The ability to retrieve messages without authentication confirmed that the queue lacked proper access control.
+Successfully subscribing without authentication.
 * On the blue side, how can the learning be used to properly defend the important assets?
 Restrict sns:Subscribe permissions to trusted users only.
 
