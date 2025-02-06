@@ -1,1 +1,52 @@
-# copy the contents of sample.md to start
+# Challenge number
+4
+
+## Challenge Statement
+Admin only?
+We learned from our mistakes from the past. Now our bucket only allows access to one specific admin user. Or does it?
+## IAM Policy 
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::thebigiamchallenge-admin-storage-abf1321/*"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::thebigiamchallenge-admin-storage-abf1321",
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": "files/*"
+                },
+                "ForAllValues:StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::133713371337:user/admin"
+                }
+            }
+        }
+    ]
+}
+```              
+### write a short analysis about the IAM policy here
+```
+* What do I have access to?
+
+* What don't I have access to?
+
+* What do I find interesting?
+* etc
+```
+
+## Solution
+
+## Reflection
+* What was your approach?
+* What was the biggest challenge?
+* How did you overcome the challenges?
+* What led to the break through?
+* On the blue side, how can the learning be used to properly defend the important assets?
