@@ -61,6 +61,6 @@ Primary Challenge: Ensuring the JSON format of the trust policy was correct.
 ## Key Insight: Explicitly including my user ARN in the role's trust relationship was critical.
 
 ## Security Best Practices
-# Least Privilege: Follow the principle of least privilege to avoid excessive permissions.
-# Regular Audits: Regularly audit and review trust policies.
-# Secure Storage: Always store sensitive data in secure systems like SSM or Secrets Manager instead of plaintext.
+#### Least Privilege: Follow the principle of least privilege to avoid excessive permissions.
+#### Regular Audits: Regularly audit and review trust policies.
+#### Secure Storage: Always store sensitive data in secure systems like SSM or Secrets Manager instead of plaintext.
