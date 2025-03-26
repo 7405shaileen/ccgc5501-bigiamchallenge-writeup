@@ -55,11 +55,12 @@ FLAG{ItsAnotherSecret::ThereWillBeALotOfAssumingRolesInThisCTF}
 ### 5. Checking Permissions
 I verified that the Ertz role had an appropriate policy attached that granted access to SSM. This confirmed that the secret could be successfully retrieved once the role was assumed.
 
-Reflections and Key Takeaways
+## Reflections and Key Takeaways
 - **Primary Challenge:** Ensuring the JSON format of the trust policy was correct.
 - **Key Insight:** Explicitly including my user ARN in the role's trust relationship was critical.
 
-## Key Insight: Explicitly including my user ARN in the role's trust relationship was critical.
+## Key Insight: 
+Explicitly including my user ARN in the role's trust relationship was critical.
 
 ## Security Best Practices
 - **Least Privilege:** Follow the principle of least privilege to avoid excessive permissions.
