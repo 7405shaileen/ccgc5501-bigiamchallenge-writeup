@@ -49,7 +49,7 @@ With the necessary permissions, I proceeded to extract the secret flag using the
 aws ssm get-parameter --name "/cloudfoxable/flag/its-another-secret" --with-decryption --region us-west-2
 
 The output returned the flag:
-FLAG{ItsAnotherSecret::ThereWillBeALotOfAssumingRolesInThisCTF}
+````FLAG{ItsAnotherSecret::ThereWillBeALotOfAssumingRolesInThisCTF} ````
 
 ### 5. Checking Permissions
 I verified that the Ertz role had an appropriate policy attached that granted access to SSM. This confirmed that the secret could be successfully retrieved once the role was assumed.
