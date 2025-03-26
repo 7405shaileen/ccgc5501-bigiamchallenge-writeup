@@ -19,7 +19,7 @@ I initiated the exercise as a `non-root-user` with Admin privileges. I then disc
 I began by executing the following command:
 
 ```bash
-aws --profile cloudfoxable sts assume-role --role-arn arn:aws:iam::307946660251:role/Ertz --role-session-name Ertz
+aws --profile cloudfoxable sts assume-role --role-arn arn:aws:iam::221082204680:role/Ertz --role-session-name Ertz
 ````
 This attempt failed because my active user wasn't recognized by the role's trust policy. Upon reviewing the policy, I found that my non-root-user was not defined as an authorized principal.
 ### 2. Upgrading the Trust Policy
@@ -32,8 +32,8 @@ The solution was to update the trust policy for the Ertz role so that it include
     "Effect": "Allow",
     "Principal": {
       "AWS": [
-        "arn:aws:iam::307946660251:user/ctf-starting-user",
-        "arn:aws:iam::307946660251:user/non-root-user"
+        "arn:aws:iam::221082204680:user/ctf-starting-user",
+        "arn:aws:iam::221082204680:user/non-root-user"
       ]
     },
     "Action": "sts:AssumeRole"
