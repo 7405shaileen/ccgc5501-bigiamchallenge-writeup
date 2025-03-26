@@ -25,7 +25,7 @@ This attempt failed because my active user wasn't recognized by the role's trust
 ### 2. Upgrading the Trust Policy
 The solution was to update the trust policy for the Ertz role so that it included both my account and the initially authorized user. The modified policy was:
 
-
+````
 {
   "Version": "2012-10-17",
   "Statement": [{
@@ -39,7 +39,7 @@ The solution was to update the trust policy for the Ertz role so that it include
     "Action": "sts:AssumeRole"
   }]
 }
-
+````
 ### 3. Successful Role Assumption
 After updating the trust policy, I executed the assume-role command again. This time, it was successful, and I received temporary credentials to operate under the Ertz role.
 
